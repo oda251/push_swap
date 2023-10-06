@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_integer.c                                    :+:      :+:    :+:   */
+/*   ini_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 05:12:13 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/04 22:42:33 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/07 06:52:49 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static long	solve(char *str, const int sign)
+static long	atoi_ps(char *str, const int sign)
 {
 	unsigned long	num;
 
@@ -34,7 +34,7 @@ static long	solve(char *str, const int sign)
 	return (sign * num);
 }
 
-long	check_integer(const char *str)
+static long	check_integer(const char *str)
 {
 	int		sign;
 	char	*trimmed;
@@ -56,7 +56,43 @@ long	check_integer(const char *str)
 	}
 	else if (*trimmed == '+')
 		flag++;
-	nums = solve(trimmed + flag, sign);
+	nums = atoi_ps(trimmed + flag, sign);
 	free(trimmed);
 	return (nums);
+}
+
+static int	is_daplicated(int *nums, int amount, int num)
+{
+	while (--amount >= 0)
+	{
+		if (nums[amount] == num)
+			return (1);
+	}
+	return (0);
+}
+
+t_stack	interpret_args(int c, char **v)
+{
+	int			i;
+	long		num;
+	t_stack	dest;
+
+	dest.nums = (int *)malloc(sizeof(int) * c);
+	if (!dest.nums)
+		return (dest);
+	dest.size = c;
+	i = 0;
+	while (i < c)
+	{
+		num = check_integer(v[i]);
+		if (num == LONG_MAX || is_daplicated(dest.nums, i, num))
+		{
+			free(dest.nums);
+			dest.nums = NULL;
+			return (dest);
+		}
+		dest.nums[i++] = num;
+	}
+	dest.sorted = is_sorted_a(dest);
+	return (dest);
 }

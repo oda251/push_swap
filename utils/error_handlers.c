@@ -1,43 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   use_operator_2.c                                   :+:      :+:    :+:   */
+/*   error_handlers.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/05 03:54:03 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/07 06:33:21 by yoda             ###   ########.fr       */
+/*   Created: 2023/10/07 05:33:43 by yoda              #+#    #+#             */
+/*   Updated: 2023/10/07 08:22:46 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "operators.h"
+#include "push_swap.h"
 
-void	ra(t_stack *a, t_stack *b)
+void	error_exit(void)
 {
-	rotate_a(a, b);
-	write(1, "ra\n", 3);
+	write(2, "Error\n", 6);
+	exit(0);
 }
 
-void	rb(t_stack *a, t_stack *b)
+void	free_exit(t_stack stack)
 {
-	rotate_b(a, b);
-	write(1, "rb\n", 3);
+	free(stack.nums);
+	exit(0);
 }
 
-void	rr(t_stack *a, t_stack *b)
+void	memory_error_exit(void)
 {
-	rotate_r(a, b);
-	write(1, "rr\n", 3);
-}
-
-void	rra(t_stack *a, t_stack *b)
-{
-	rev_rotate_a(a, b);
-	write(1, "rra\n", 4);
-}
-
-void	rrb(t_stack *a, t_stack *b)
-{
-	rev_rotate_b(a, b);
-	write(1, "rrb\n", 4);
+	write(2, "Memory Error\n", 13);
+	exit(0);
 }

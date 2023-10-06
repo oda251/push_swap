@@ -6,14 +6,11 @@
 /*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 23:15:21 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/04 23:56:08 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/07 06:29:27 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int		take_top(t_stack stack);
-void	put_top(t_stack stack, int num);
+#include "operators.h"
 
 static void	swap(int *a, int *b)
 {
@@ -24,26 +21,26 @@ static void	swap(int *a, int *b)
 	*b = tmp;
 }
 
-void	swap_a(t_stack a, t_stack b)
+void	swap_a(t_stack *a, t_stack *b)
 {
 	(void)b;
-	if (a.size < 2)
+	if (a->size < 2)
 		return ;
-	swap(&a.nums[0], &a.nums[1]);
+	swap(&a->nums[0], &a->nums[1]);
 }
 
-void	swap_b(t_stack a, t_stack b)
+void	swap_b(t_stack *a, t_stack *b)
 {
 	(void)a;
-	if (b.size < 2)
+	if (b->size < 2)
 		return ;
-	swap(&b.nums[0], &b.nums[1]);
+	swap(&b->nums[0], &b->nums[1]);
 }
 
-void	swap_s(t_stack a, t_stack b)
+void	swap_s(t_stack *a, t_stack *b)
 {
-	if (a.size > 1)
+	if (a->size > 1)
 		swap_a(a, b);
-	if (b.size > 1)
+	if (b->size > 1)
 		swap_b(a, b);
 }

@@ -1,6 +1,5 @@
 NAME = push_swap
 SRCS = main.c \
-	check_integer.c \
 	push_swap.c
 OPS = op_push.c \
 	op_rev_rotate.c \
@@ -10,8 +9,12 @@ OPS = op_push.c \
 	use_operator_1.c \
 	use_operator_2.c \
 	use_operator_3.c
-UTILS = check_integer.c \
-	is_sorted.c
+UTILS = init_utils.c \
+	error_handlers.c \
+	is_sorted.c \
+	calc_a.c \
+	calc_b.c \
+	calc_both.c
 OP_DIR = ./operators/
 UTILS_DIR = ./utils/
 SRCS += $(addprefix $(OP_DIR), $(OPS)) \
@@ -21,7 +24,7 @@ CFLAGS = -Wall -Wextra -Werror
 TFLAGS = -Wall -Wextra -g -fsanitize=address
 LIBFT_DIR = ./libft/
 LIBFT = $(LIBFT_DIR)/libft.a
-INCLUDES = -I$(LIBFT_DIR) -I./
+INCLUDES = -I ./includes -I $(LIBFT_DIR)/
 
 all: $(NAME)
 
@@ -42,6 +45,6 @@ fclean: clean
 re: fclean all
 
 test: $(LIBFT)
-	@$(CC) $(TFLAGS) $(SRCS) -L$(LIBFT_DIR) -lft $(INCLUDES) && ./a.out
+	@$(CC) $(TFLAGS) $(INCLUDES) $(SRCS) -L$(LIBFT_DIR) -lft && ./a.out 1 2 48 08 09812 214 81212  12401 12841 21 098 102 1204 127 93214 31
 
 .PHONY: all clean fclean re test
