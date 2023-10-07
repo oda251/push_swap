@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calc_both.c                                        :+:      :+:    :+:   */
+/*   calc_both copy.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 05:26:43 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/08 06:27:33 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/08 02:47:19 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,8 @@
 void	(*calc_a(t_stack a))(t_stack *, t_stack *);
 void	(*calc_b(t_stack b))(t_stack *, t_stack *);
 
-static void	(*r_push_a(t_stack a, t_stack b))(t_stack *, t_stack *)
-{
-	if (b.size == 0)
-		return (pa);
-	if (b.nums[0] > a.nums[a.size - 1] && a.nums[0] > a.nums[a.size - 1])
-		return (rra);
-	else
-		return (pa);
-}
-
 static void	(*r_push_b(t_stack a, t_stack b))(t_stack *, t_stack *)
 {
-	if (a.size == 0)
-		return (pb);
 	if (a.nums[0] > b.nums[b.size - 1] && b.nums[0] > b.nums[b.size - 1])
 		return (rrb);
 	else
@@ -47,9 +35,9 @@ void	(*calc_both(t_stack a, t_stack b, int once_sorted))(t_stack *, t_stack *)
 	if (f_a == NULL && f_b == NULL)
 	{
 		if (!a.sorted)
-			return (r_push_b(a, b));
+			return (pb);
 		else
-			return (r_push_a(a, b));
+			return (pa);
 	}
 	if (!f_b)
 		return (f_a);

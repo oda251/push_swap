@@ -10,7 +10,8 @@ OPS = op_push.c \
 	use_operator_1.c \
 	use_operator_2.c \
 	use_operator_3.c
-UTILS = init_utils.c \
+UTILS = interpret_args.c \
+	interpret_utils.c \
 	exit_handlers.c \
 	is_sorted.c \
 	calc_a.c \
@@ -33,7 +34,7 @@ INCLUDES = -I ./includes/ -I $(LIBFT_DIR)
 
 all: $(NAME)
 
-$(NAME): $(LIBFT)
+$(NAME): $(LIBFT) $(SRCS)
 	$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME) $(SRCS) -L$(LIBFT_DIR) -lft
 
 $(LIBFT):

@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 22:17:51 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/07 08:37:19 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/07 15:40:48 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ void	push_swap(t_stack *a, t_stack *b, int *count)
 	int		once_sorted;
 
 	once_sorted = FALSE;
-	// 3 1 2 5 4
-	// while (TRUE)
-	for (int i = 0; i < 300; i++)
+	while (TRUE)
+	// for (int i = 0; i < 300; i++)
 	{
 		(*count)++;
 		if (b->size == 0 && once_sorted == TRUE)

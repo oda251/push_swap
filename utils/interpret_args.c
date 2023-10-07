@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_utils.c                                       :+:      :+:    :+:   */
+/*   interpret_args.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 05:12:13 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/07 09:30:24 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/08 07:28:22 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	convert_consecutive(t_stack *dest);
 
 static long	atoi_ps(char *str, const int sign)
 {
@@ -74,6 +76,7 @@ static int	is_daplicated(int *nums, int amount, int num)
 t_stack	interpret_args(int c, char **v)
 {
 	int			i;
+	
 	long		num;
 	t_stack	dest;
 
@@ -88,11 +91,11 @@ t_stack	interpret_args(int c, char **v)
 		if (num == LONG_MAX || is_daplicated(dest.nums, i, num))
 		{
 			free(dest.nums);
-			dest.nums = NULL;
-			return (dest);
+			error_exit();
 		}
 		dest.nums[i++] = num;
 	}
+	convert_consecutive(&dest);
 	dest.sorted = is_sorted_a(dest);
 	return (dest);
 }
