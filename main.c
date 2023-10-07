@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 05:11:54 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/07 08:37:35 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/07 10:11:33 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 t_stack	interpret_args(int c, char **v);
 void	push_swap(t_stack *a, t_stack *b, int *count);
-void	free_exit(t_stack a);
 
 int	main(int c, char **v)
 {
@@ -33,11 +32,12 @@ int	main(int c, char **v)
 	if (!b.nums)
 	{
 		free(a.nums);
-		error_exit();
+		memory_error_exit();
 	}
 	b.size = 0;
 	b.sorted = TRUE;
 	// DONT FORGET TO DELETE THIS AND SO ON
+	// MAYBE I SHOULD USE ONLY ONE DIRECTORY. FIX IT LATER.
 	count = 0;
 	push_swap(&a, &b, &count);
 	// for (int i = 0; i < a.size; i++)

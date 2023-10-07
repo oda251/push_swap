@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 05:45:52 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/07 08:22:56 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/07 10:11:42 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	rrr(t_stack *a, t_stack *b);
 int		is_sorted_a(t_stack stack);
 int		is_sorted_b(t_stack stack);
 void	memory_error_exit(void);
+void	free_exit(t_stack a);
 void	error_exit(void);
 
 #endif

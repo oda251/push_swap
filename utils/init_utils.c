@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ini_utils.c                                        :+:      :+:    :+:   */
+/*   init_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 05:12:13 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/07 06:52:49 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/07 09:30:24 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ t_stack	interpret_args(int c, char **v)
 
 	dest.nums = (int *)malloc(sizeof(int) * c);
 	if (!dest.nums)
-		return (dest);
+		memory_error_exit();
 	dest.size = c;
 	i = 0;
 	while (i < c)
