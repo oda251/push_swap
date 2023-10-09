@@ -1,7 +1,9 @@
 NAME = push_swap
 CHECKER = checker
 SRCS = main.c \
-	push_swap.c
+	push_swap.c \
+	calc_both.c \
+	push_a_all.c
 OPS = op_push.c \
 	op_rev_rotate.c \
 	op_rotate.c \
@@ -11,12 +13,11 @@ OPS = op_push.c \
 	use_operator_2.c \
 	use_operator_3.c
 UTILS = interpret_args.c \
-	interpret_utils.c \
+	convert_consecutives.c \
 	exit_handlers.c \
 	is_sorted.c \
 	calc_a.c \
-	calc_b.c \
-	calc_both.c
+	calc_b.c
 CHECKER_SRCS = $(addprefix $(OP_DIR), $(OPS)) \
 	$(addprefix $(CHECKER_DIR), checker.c) \
 	$(addprefix $(UTILS_DIR), $(UTILS))

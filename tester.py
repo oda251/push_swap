@@ -4,8 +4,8 @@ import math
 
 args = []
 
-for i in range(100):
-	numlist = [i for i in range(1, 100)]
+for i in range(500):
+	numlist = [i for i in range(1, 6)]
 	random.shuffle(numlist)
 	list_str = ' '.join([str(v) for v in numlist])
 	args.append(int(subprocess.run([f'./push_swap {list_str} | wc -l'], stdout=subprocess.PIPE, shell=True).stdout))

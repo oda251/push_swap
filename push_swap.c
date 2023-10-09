@@ -6,30 +6,24 @@
 /*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 22:17:51 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/07 15:40:48 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/10 03:04:12 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	(*calc_both(t_stack a, t_stack b, int once_sorted))(t_stack *, t_stack *);
+void	calc_both(t_stack *a, t_stack *b, int once_sorted);
 
-void	push_swap(t_stack *a, t_stack *b, int *count)
+void	push_swap(t_stack *a, t_stack *b)
 {
-	void	(*f)(t_stack *, t_stack *);
 	int		once_sorted;
 
 	once_sorted = FALSE;
 	while (TRUE)
-	// for (int i = 0; i < 300; i++)
 	{
-		(*count)++;
-		if (b->size == 0 && once_sorted == TRUE)
+		if (a->sorted && b->size == 0)
 			break ;
-		f = calc_both(*a, *b, once_sorted);
-		if (*f == NULL)
-			break ;
-		f(a, b);
+		calc_both(a, b, once_sorted);
 		a->sorted = is_sorted_a(*a);
 		b->sorted = is_sorted_b(*b);
 		// printf("a: ");
@@ -44,6 +38,6 @@ void	push_swap(t_stack *a, t_stack *b, int *count)
 		if (a->sorted == TRUE && b->size == 0)
 			break ;
 		if (a->sorted == TRUE && b->sorted == TRUE)
-			once_sorted = TRUE;
+			push_a_all(a, b);
 	}
 }
