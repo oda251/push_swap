@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   convert_consecutives.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 07:18:17 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/10 02:52:36 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/12 02:42:47 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	solve(t_stack *dest, int *new)
+static void	solve(t_stack *d, int *new)
 {
 	int		i;
 	int		min_i;
@@ -20,37 +20,37 @@ static void	solve(t_stack *dest, int *new)
 	long	smallest;
 
 	smallest = LONG_MIN;
-	num = 1;
+	num = 0;
 	min_i = 0;
-	while (num <= dest->size)
+	while (num <= d->size)
 	{
 		i = -1;
-		while (++i < dest->size)
+		while (++i < d->size)
 		{
-			if (dest->nums[min_i] == smallest && (long) dest->nums[i] > smallest)
+			if (d->nums[min_i] == smallest && (long) d->nums[i] > smallest)
 				min_i = i;
 			else
 			{
-				if (dest->nums[i] < dest->nums[min_i] && dest->nums[i] > smallest)
+				if (d->nums[i] < d->nums[min_i] && d->nums[i] > smallest)
 					min_i = i;
 			}
 		}
 		new[min_i] = num++;
-		smallest = dest->nums[min_i];
+		smallest = d->nums[min_i];
 	}
 }
 
-void	convert_consecutive(t_stack *dest)
+void	convert_consecutive(t_stack *d)
 {
 	int		*new;
-	
-	new = malloc(sizeof(int) * dest->size);
+
+	new = malloc(sizeof(int) * d->size);
 	if (!new)
 	{
-		free(dest->nums);
+		free(d->nums);
 		memory_error_exit();
 	}
-	solve(dest, new);
-	free(dest->nums);
-	dest->nums = new;
+	solve(d, new);
+	free(d->nums);
+	d->nums = new;
 }

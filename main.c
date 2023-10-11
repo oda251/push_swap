@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 05:11:54 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/10 03:02:57 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/12 03:58:56 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 t_stack	interpret_args(int c, char **v);
-void	push_swap(t_stack *a, t_stack *b);
+void	push_swap_small(t_stack *a, t_stack *b);
 
 int	main(int c, char **v)
 {
@@ -33,7 +33,10 @@ int	main(int c, char **v)
 	}
 	b.size = 0;
 	b.sorted = TRUE;
-	push_swap(&a, &b);
+	if (a.size < 50)
+		push_swap_small(&a, &b);
+	else
+		push_swap_large(&a, &b);
 	// for (int i = 0; i < a.size; i++)
 	// 	printf("%d ", a.nums[i]);
 	// printf("\n");

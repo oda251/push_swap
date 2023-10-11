@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_a_all.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 02:43:10 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/10 05:11:24 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/12 04:00:01 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,10 @@ void	push_a_all(t_stack *a, t_stack *b)
 	while (b->size >= 0)
 	{
 		f = choose(a, b->nums[0]);
-		if (b->nums[0] > a->nums[0] && a->nums[0] && a->nums[0] > a->nums[a->size - 1])
+		if (b->nums[0] > a->nums[0]
+			&& a->nums[0] && a->nums[0] > a->nums[a->size - 1])
 			return (f(a, b));
 		else
-			return(pa(a, b));
+			return (pa(a, b));
 	}
 }
