@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 22:17:51 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/12 05:18:15 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/13 05:35:17 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void	push_swap_large(t_stack *a, t_stack *b)
 	int	i;
 
 	i = 0;
+	pb(a, b);
+	pb(a, b);
 	while (i < a->size)
 		calc_large(a, b);
 	push_a_all(a, b);
