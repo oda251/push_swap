@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   interpret_args.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 05:12:13 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/08 07:28:22 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/13 22:15:22 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,8 @@ static int	is_daplicated(int *nums, int amount, int num)
 
 t_stack	interpret_args(int c, char **v)
 {
-	int			i;
-	
-	long		num;
+	int		i;
+	long	num;
 	t_stack	dest;
 
 	dest.nums = (int *)malloc(sizeof(int) * c);

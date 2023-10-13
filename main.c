@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 05:11:54 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/12 03:58:56 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/13 22:31:47 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 t_stack	interpret_args(int c, char **v);
 void	push_swap_small(t_stack *a, t_stack *b);
+void	push_swap_large(t_stack *a, t_stack *b);
 
 int	main(int c, char **v)
 {
@@ -33,7 +34,7 @@ int	main(int c, char **v)
 	}
 	b.size = 0;
 	b.sorted = TRUE;
-	if (a.size < 50)
+	if (a.size < 1)
 		push_swap_small(&a, &b);
 	else
 		push_swap_large(&a, &b);

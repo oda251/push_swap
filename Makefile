@@ -3,6 +3,7 @@ CHECKER = checker
 SRCS = main.c \
 	push_swap.c \
 	calc_small.c \
+	calc_large.c \
 	push_a_all.c
 OPS = op_push.c \
 	op_rev_rotate.c \
@@ -59,6 +60,7 @@ fclean: clean
 re: fclean all
 
 test: $(LIBFT)
-	@$(CC) $(TFLAGS) $(INCLUDES) $(SRCS) -L$(LIBFT_DIR) -lft && ./a.out 1 2 48 08 09812 214 81212  12401 12841 21 098 102 1204 127 93214 31
+	@$(CC) $(TFLAGS) $(INCLUDES) $(SRCS) -L$(LIBFT_DIR) -lft && ./a.out 27 10 19 12 2 17 1 22 21 28 14 0 24 9 20 26 18 29 25 15 16 7 5 8 4 6 23 13 3 11
+
 
 .PHONY: all clean fclean re test bonus
