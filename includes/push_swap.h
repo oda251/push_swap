@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 05:45:52 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/10 03:04:05 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/15 03:42:05 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ int		is_sorted_b(t_stack stack);
 void	memory_error_exit(void);
 void	free_exit(t_stack a);
 void	error_exit(void);
+void	calc_times_to_rotate_a(int num, t_stack *s, int *dest);
+void	calc_times_to_rotate_b(int num, t_stack *s, int *dest);
 
 #endif

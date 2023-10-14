@@ -6,13 +6,14 @@
 /*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 09:16:14 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/07 09:44:05 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/15 05:13:45 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PS_CHECKER_H
 # define PS_CHECKER_H
 # include "operators.h"
+# include "get_next_line.h"
 # define OK 1
 # define KO 0
 # define ERROR -1

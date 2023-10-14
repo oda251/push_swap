@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   interpret_args.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 05:12:13 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/13 22:15:22 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/15 03:48:25 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	convert_consecutive(t_stack *dest);
 
 static long	atoi_ps(char *str, const int sign)
 {
@@ -94,7 +92,6 @@ t_stack	interpret_args(int c, char **v)
 		}
 		dest.nums[i++] = num;
 	}
-	convert_consecutive(&dest);
 	dest.sorted = is_sorted_a(dest);
 	return (dest);
 }

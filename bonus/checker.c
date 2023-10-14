@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 09:15:50 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/07 10:12:10 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/15 05:21:23 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,27 +72,27 @@ int	solve_checker(t_stack *a, t_stack *b)
 
 int	checker_sub(t_stack *a, t_stack *b, char *line)
 {
-	if (ps_strcmp(line, "sa") == 0)
+	if (ps_strcmp(line, "sa") == 1)
 		swap_a(a, b);
-	else if (ps_strcmp(line, "sb") == 0)
+	else if (ps_strcmp(line, "sb") == 1)
 		swap_b(a, b);
-	else if (ps_strcmp(line, "ss") == 0)
+	else if (ps_strcmp(line, "ss") == 1)
 		swap_s(a, b);
-	else if (ps_strcmp(line, "pa") == 0)
+	else if (ps_strcmp(line, "pa") == 1)
 		push_a(a, b);
-	else if (ps_strcmp(line, "pb") == 0)
+	else if (ps_strcmp(line, "pb") == 1)
 		push_b(a, b);
-	else if (ps_strcmp(line, "ra") == 0)
+	else if (ps_strcmp(line, "ra") == 1)
 		rotate_a(a, b);
-	else if (ps_strcmp(line, "rb") == 0)
+	else if (ps_strcmp(line, "rb") == 1)
 		rotate_b(a, b);
-	else if (ps_strcmp(line, "rr") == 0)
+	else if (ps_strcmp(line, "rr") == 1)
 		rotate_r(a, b);
-	else if (ps_strcmp(line, "rra") == 0)
+	else if (ps_strcmp(line, "rra") == 1)
 		rev_rotate_a(a, b);
-	else if (ps_strcmp(line, "rrb") == 0)
+	else if (ps_strcmp(line, "rrb") == 1)
 		rev_rotate_b(a, b);
-	else if (ps_strcmp(line, "rrr") == 0)
+	else if (ps_strcmp(line, "rrr") == 1)
 		rev_rotate_a(a, b);
 	else
 		return (ERROR);

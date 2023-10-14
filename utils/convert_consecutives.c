@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convert_consecutives.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 07:18:17 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/12 02:42:47 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/15 03:47:02 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	solve(t_stack *d, int *new)
 	smallest = LONG_MIN;
 	num = 0;
 	min_i = 0;
-	while (num <= d->size)
+	while (num < d->size)
 	{
 		i = -1;
 		while (++i < d->size)
