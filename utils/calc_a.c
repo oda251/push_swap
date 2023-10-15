@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   calc_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 01:09:51 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/07 07:41:31 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/15 18:59:43 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	(*calc_a_over_2(t_stack a))(t_stack *, t_stack *)
+static void	(*calc_a_over_2(t_stack a))(t_stack *s1, t_stack *s2)
 {
 	if (a.nums[0] < a.nums[1])
 	{
@@ -40,7 +40,7 @@ static void	(*calc_a_over_2(t_stack a))(t_stack *, t_stack *)
 	}
 }
 
-void	(*calc_a(t_stack a))(t_stack *, t_stack *)
+void	(*calc_a(t_stack a))(t_stack *s1, t_stack *s2)
 {
 	if (a.size < 2)
 		return (NULL);

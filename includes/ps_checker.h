@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_checker.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 09:16:14 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/15 05:13:45 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/15 18:59:18 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 # define KO 0
 # define ERROR -1
 
-void		ok_exit(void);
-void		ko_exit(void);
-void		error_exit(void);
-void		memory_error_exit(void);
+void	ok_exit(void);
+void	ko_exit(void);
+void	error_exit(void);
+void	memory_error_exit(void);
 t_stack	interpret_args(int c, char **v);
 
 #endif

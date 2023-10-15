@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   calc_times_to_rotate.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 01:17:08 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/15 03:41:49 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/15 19:00:15 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ void	calc_times_to_rotate_a(int num, t_stack *a, int *dest)
 	i = 1;
 	while (i < a->size)
 	{
-		if (a->nums[i - 1] > a->nums[i] && (a->nums[i - 1] < num || num < a->nums[i]))
+		if (a->nums[i - 1] > a->nums[i]
+			&& (a->nums[i - 1] < num || num < a->nums[i]))
 			return (calc_t_r_sub(i, a, dest));
 		else if (a->nums[i - 1] < num && num < a->nums[i])
 			return (calc_t_r_sub(i, a, dest));
@@ -56,7 +57,8 @@ void	calc_times_to_rotate_b(int num, t_stack *b, int *dest)
 	i = 1;
 	while (i < b->size)
 	{
-		if (b->nums[i - 1] < b->nums[i] && (b->nums[i - 1] > num || num > b->nums[i]))
+		if (b->nums[i - 1] < b->nums[i]
+			&& (b->nums[i - 1] > num || num > b->nums[i]))
 			return (calc_t_r_sub(i, b, dest));
 		else if (b->nums[i - 1] > num && num > b->nums[i])
 			return (calc_t_r_sub(i, b, dest));
