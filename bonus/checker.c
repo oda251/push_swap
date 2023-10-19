@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 09:15:50 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/15 18:59:03 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/19 22:34:21 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ int	main(int c, char **v)
 	if (c < 2)
 		exit(0);
 	a = interpret_args(c - 1, v + 1);
-	if (is_sorted_a(a) == TRUE)
-		free_exit(a);
 	b.nums = malloc(sizeof(int) * a.size);
 	if (!b.nums)
 	{
@@ -66,7 +64,7 @@ int	solve_checker(t_stack *a, t_stack *b)
 		free(line);
 	}
 	if (result_flag != ERROR)
-		result_flag = is_sorted_a(*a) && b->size == 0;
+		result_flag = (is_sorted_a(*a) && b->size == 0);
 	return (result_flag);
 }
 
