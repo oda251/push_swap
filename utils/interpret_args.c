@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   interpret_args.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 05:12:13 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/15 03:48:25 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/21 15:34:27 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+char	**conv_str_arg(int c, char **v);
+size_t	count_args(char **v);
+char	**free_all_ps(char **v);
 
 static long	atoi_ps(char *str, const int sign)
 {
@@ -71,20 +75,15 @@ static int	is_daplicated(int *nums, int amount, int num)
 	return (0);
 }
 
-t_stack	interpret_args(int c, char **v)
+t_stack	interpret_a_sub(size_t len, char **arg_conved, t_stack dest)
 {
-	int		i;
+	size_t	i;
 	long	num;
-	t_stack	dest;
 
-	dest.nums = (int *)malloc(sizeof(int) * c);
-	if (!dest.nums)
-		memory_error_exit();
-	dest.size = c;
 	i = 0;
-	while (i < c)
+	while (i < len)
 	{
-		num = check_integer(v[i]);
+		num = check_integer(arg_conved[i]);
 		if (num == LONG_MAX || is_daplicated(dest.nums, i, num))
 		{
 			free(dest.nums);
@@ -92,6 +91,25 @@ t_stack	interpret_args(int c, char **v)
 		}
 		dest.nums[i++] = num;
 	}
+	return (dest);
+}
+
+t_stack	interpret_args(int c, char **v)
+{
+	char	**arg_conved;
+	size_t	len;
+	t_stack	dest;
+
+	arg_conved = conv_str_arg(c, v);
+	len = count_args(arg_conved);
+	if (len == 0)
+		memory_error_exit();
+	dest.nums = (int *)malloc(sizeof(int) * len);
+	if (!dest.nums)
+		memory_error_exit();
+	dest.size = len;
+	dest = interpret_a_sub(len, arg_conved, dest);
+	free_all_ps(arg_conved);
 	dest.sorted = is_sorted_a(dest);
 	return (dest);
 }

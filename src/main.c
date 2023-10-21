@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 05:11:54 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/15 05:31:06 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/21 15:23:34 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,18 @@ int	main(int c, char **v)
 		push_swap_large(&a, &b);
 	free(a.nums);
 	free(b.nums);
+}
+
+__attribute__((destructor))
+void	destructor(void)
+{
+	int	status;
+
+	status = system("leaks push_swap &> leaksout");
+	if (status)
+	{
+		write(2, "leak!!!\n", 8);
+		system("cat leaksout >/dev/stderr");
+		exit(1);
+	}
 }

@@ -19,7 +19,8 @@ UTILS = interpret_args.c \
 	calc_b.c \
 	calc_times_to_rotate.c \
 	push_a_all.c \
-	ps_strcmp.c
+	ps_strcmp.c \
+	convert_str_arg.c
 CHECKER_SRC = checker.c \
 	get_next_line.c \
 	get_next_line_utils.c
