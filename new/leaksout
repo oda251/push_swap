@@ -1,0 +1,5 @@
+You have access to multiple processes named push_swap:
+    a)  4259 ./push_swap
+    b)  8987 ./push_swap
+
+leaks[8989]: leaks cannot find any existing process you have access to which has a name like 'push_swap'; try running with `sudo`.
