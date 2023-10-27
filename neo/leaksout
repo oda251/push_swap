@@ -1,13 +1,13 @@
-Process:         push_swap [83896]
+Process:         push_swap [80433]
 Path:            /Volumes/VOLUME/*/push_swap
-Load Address:    0x10bd62000
+Load Address:    0x10d36b000
 Identifier:      push_swap
 Version:         ???
 Code Type:       X86-64
-Parent Process:  Python [83367]
+Parent Process:  bash [80425]
 
-Date/Time:       2023-10-27 21:04:59.844 +0900
-Launch Time:     2023-10-27 21:04:59.622 +0900
+Date/Time:       2023-10-27 20:46:03.006 +0900
+Launch Time:     2023-10-27 20:46:02.756 +0900
 OS Version:      Mac OS X 10.14.6 (18G9216)
 Report Version:  7
 Analysis Tool:   /Applications/Xcode.app/Contents/Developer/usr/bin/leaks
@@ -15,6 +15,6 @@ Analysis Tool Version:  Xcode 11.3.1 (11C505)
 ----
 
 leaks Report Version: 4.0
-Process 83896: 161 nodes malloced for 14 KB
-Process 83896: 0 leaks for 0 total leaked bytes.
+Process 80433: 161 nodes malloced for 14 KB
+Process 80433: 0 leaks for 0 total leaked bytes.
 
