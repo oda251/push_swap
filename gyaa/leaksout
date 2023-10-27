@@ -1,0 +1,20 @@
+Process:         push_swap [94106]
+Path:            /Volumes/VOLUME/*/push_swap
+Load Address:    0x1088c1000
+Identifier:      push_swap
+Version:         ???
+Code Type:       X86-64
+Parent Process:  bash [94098]
+
+Date/Time:       2023-10-27 22:20:39.153 +0900
+Launch Time:     2023-10-27 22:20:38.931 +0900
+OS Version:      Mac OS X 10.14.6 (18G9216)
+Report Version:  7
+Analysis Tool:   /Applications/Xcode.app/Contents/Developer/usr/bin/leaks
+Analysis Tool Version:  Xcode 11.3.1 (11C505)
+----
+
+leaks Report Version: 4.0
+Process 94106: 158 nodes malloced for 13 KB
+Process 94106: 0 leaks for 0 total leaked bytes.
+
