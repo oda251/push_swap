@@ -2,7 +2,8 @@ NAME = push_swap
 CHECKER = checker
 SRC = main.c \
 	push_swap.c \
-	calc_small.c
+	calc_small.c \
+	ps_large_sub.c
 OPS = op_push.c \
 	op_rev_rotate.c \
 	op_rotate.c \
