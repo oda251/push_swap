@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 05:11:54 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/28 04:13:13 by yoda             ###   ########.fr       */
+/*   Updated: 2023/10/29 18:41:11 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #ifndef SMALL_SIZE
-# define SMALL_SIZE 1
+# define SMALL_SIZE 6
 #endif
 
 t_stack	interpret_args(int c, char **v);
