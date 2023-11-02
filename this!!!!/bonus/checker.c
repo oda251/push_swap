@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoda <yoda@student.42tokyo.jp>             +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 09:15:50 by yoda              #+#    #+#             */
-/*   Updated: 2023/10/29 04:36:32 by yoda             ###   ########.fr       */
+/*   Updated: 2023/11/02 21:29:26 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	solve_checker(t_stack *a, t_stack *b)
 	int		result_flag;
 	char	*line;
 
-	result_flag = ERROR;
+	result_flag = OK;
 	while (1)
 	{
 		line = get_next_line(0);
